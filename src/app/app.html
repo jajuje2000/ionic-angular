@@ -1,1 +1,18 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<div style="background-color:#0c7cd5;padding:10px 10px 5px 5px;display:flex;" *ngIf="showHomeNav">
+    <div style="flex:1;display:flex;justify-content:flex-start;align-items:flex-start;">
+    <div class="mobile-hide">
+        <span class="application-title">ENFORCEMENT LOOKUP SYSTEM</span>
+    </div>
+    </div>
+    <div style="flex:1;display:flex;justify-content:flex-end;align-items:flex-end;">
+        <nav>
+            <a routerLink="/home" routerLinkActive="active" class="title-nav-icon">
+                <mat-icon>home</mat-icon>
+            </a>
+        </nav>
+    </div>
+</div>
+<ion-content>
+    <router-outlet></router-outlet>
+</ion-content>
+

@@ -1,0 +1,41 @@
+﻿<div class="login-main-div">
+
+    <div class="outer">
+        <div class="middle">
+            <div class="inner">
+
+                <div class="login-panel">
+                    <div id="content">
+                        <div class="login-title">
+                            Enforcement Lookup
+                        </div>
+                        <div class="login">
+                            <div>
+                                <mat-form-field class="login-primary">
+                                    <input matInput type="text" placeholder="User Name" [(ngModel)]="username">
+                                    <button mat-button *ngIf="username" matSuffix mat-icon-button aria-label="Clear" (click)="username=''">
+                                        <mat-icon>close</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+                            <div>
+                                <mat-form-field class="login-primary">
+                                    <input matInput type="password" placeholder="Password" [(ngModel)]="password">
+                                    <button mat-button *ngIf="password" matSuffix mat-icon-button aria-label="Clear" (click)="password=''">
+                                        <mat-icon>close</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+                            <div class="login-primary-button">
+                                <button mat-raised-button flex="80" color="primary" class="mat-raised mat-darkprimary" (click)="login()" routerLinkActive="active">LOGIN</button>
+                                <p>{{message}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

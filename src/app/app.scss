@@ -14,3 +14,369 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+@import 'node_modules/@angular/material/prebuilt-themes/deeppurple-amber'; 
+@import 'src/app/components/home/home'; 
+@import 'src/app/components/query-history-lookup/query-history-lookup'; 
+/* mat dialog */
+
+mat-dialog-container.mat-dialog-container{
+    padding:0;
+}
+
+mat-dialog-content.mat-dialog-content{
+    margin:0;
+}
+
+mat-dialog-actions.dialog-action{
+    margin-bottom:0;
+    margin-right:20px;
+}
+
+.mat-dialog-title{
+    font-size:20px;
+    font-weight:400;
+    background-color:rgb(33,150,243);
+    color:#fff;
+    padding:16px;
+    text-transform:capitalize;
+}
+
+
+
+/* Global Font and Margin set to 0. */
+body{
+    font-family:Roboto, sans-serif !important;
+    margin:0;
+}
+
+.application-title{
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.title-nav-icon
+{
+    color:white;
+}
+
+/* mat-card */
+
+mat-card.mat-card{
+    padding:0 0 24px 0;
+}
+
+mat-card.mat-card-side-nav{
+    padding:0 8px 24px 0;
+}
+
+mat-card-title.mat-card-title-side-nav{
+    margin-right: -8px;
+}
+
+/*mat-card-title.mat-card-title-margin{
+    margin-right: 16px;
+}*/
+
+mat-card-content.mat-card-content{
+    margin:10px;
+}
+
+/* Progress Loader */
+.loading-indicator {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.loading-indicator .spinner-color circle {
+  stroke: rgb(33,150,243);
+}
+
+.loading-indicator:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.3);
+}
+
+/* Text */
+p.header-text{
+    text-align: left;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: rgba(0,0,0,0.54);
+}
+
+/* Center align vert/horiz div */
+.outer {
+    display: table;
+    position: fixed;
+    height: 80%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 411px; /*whatever width you want*/
+    width:100%;
+}
+
+/* Buttons */
+button.mat-primary{
+    background-color: rgb(33,150,243) !important;
+    color: #fff;
+}
+
+/* Input Form Field */
+.mat-focused .mat-form-field-label{
+    color:rgb(33,150,243);
+}
+
+.mat-form-field-underline {
+    background-color: rgba(0,0,0,.08)!important;
+}
+
+.mat-form-field-ripple{
+    background-color:rgb(33,150,243);
+}
+
+/* Kendo Date Picker, Time Picker */
+
+.k-picker-wrap.k-state-default {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(0,0,0,.08)!important;
+}
+
+.k-picker-wrap.k-state-default > .k-select {
+    background-image:none;
+    background-color:transparent;
+    border-radius:0;
+    border-style:none;
+}
+
+.k-picker-wrap.k-state-default > .k-select:hover {
+    background-image:none;
+    background-color:transparent;
+}
+
+.mat-form-field-infix {
+    padding: .4375em 0;
+    border-top: 7px solid transparent;
+}
+
+.k-datepicker:hover .k-picker-wrap .k-select{
+    background-image: none;
+    background-color: transparent;
+}
+
+.k-timepicker:hover .k-picker-wrap .k-select{
+    background-image: none;
+    background-color: transparent;
+}
+
+
+.k-dateinput-wrap .k-input::selection {
+    background-color: rgba(33,150,243,0.3)!important;
+    color: currentColor;
+}
+
+.k-dateinput-wrap input.k-input {
+    color: rgba(0,0,0,.54)!important;
+    font-size:14px;
+    font-weight:400;
+}
+
+/* Kendo Grid Style Override */ 
+
+    .kg-custom .k-grid {
+        border-left: 0;
+        border-right: 0;
+        position: static;
+      }
+
+    kendo-grid-list.k-grid-container{
+        font-size:14px;
+    }
+
+ kendo-grid.k-grid .k-alt {
+       background-color: white; /* specify the background-color */
+    }
+
+ kendo-grid.k-grid .k-pager-nav {
+    color: #007bff;
+     background-color:transparent!important; 
+     border:0; 
+}
+
+ kendo-grid.k-grid tbody tr:hover {
+    color: #212529;
+    background-color: #bbdefb!important;
+}
+
+kendo-grid.k-grid div kendo-grid-list td.ng-star-inserted {
+    border-bottom: 1px solid rgba(33,37,41,.125);
+    border-left:0;
+}
+
+/* Kendo Grid: Grouping Header */
+
+.kg-custom .k-grid .k-grouping-header {
+    padding: 2px 16px;
+    color: #1976d2;
+    font-size: .889em;
+    background-color: #bbdefb;
+}
+
+.kg-custom .k-grid .k-grouping-header .k-indicator-container{
+    padding:0;
+}
+
+.kg-custom .k-grid .k-grouping-header .k-indicator-container .k-group-indicator{
+    background-color: #2196f3;
+    border-color: #2196f3;
+    color: #fff;
+}
+
+.k-grouping-header .k-group-indicator {
+    padding: .1em .15em .1em .4em; }
+
+.k-grid .k-grouping-header {
+    color: white; }
+
+.k-grouping-header-flex>.k-indicator-container {
+    display: -ms-inline-flexbox;
+    display:inline-flex;
+    margin:0;
+}
+
+/* Kendo Grid: Column Header */
+
+.kg-custom .k-grid .k-grid-header {
+        border-bottom: 2px solid #b6b6b6;
+        padding-left: .9em;
+        color: #a8a8a8;
+}
+
+.k-i-filter:before {
+        content:"\e031";
+}
+
+.kg-custom .k-grid .k-grid-header .k-grid-header-wrap {
+    border: 1px solid #fafafa;
+    font-weight: 400;
+    white-space: normal;
+    vertical-align: top;
+    padding-bottom: 5px;
+}
+
+/* Kendo Grid: Footer */
+
+ul.k-pager-numbers a.k-link.k-state-selected{
+    color:#007bff;
+    background-color:transparent;
+    border:0;
+}
+
+ul.k-pager-numbers a.k-link.k-state-selected:hover{
+    color:#007bff;
+    background-color:transparent;
+    border:0;
+}
+
+ul.k-pager-numbers a.k-link.k-state-selected:focus{
+    box-shadow:none;
+}
+
+ul.k-pager-numbers a.k-link{
+    background-color:transparent;
+    border:0;
+    color:#212529;
+}
+
+ul.k-pager-numbers a.k-link:focus{
+    box-shadow:none;
+}
+
+kendo-grid.k-grid .k-pager-nav{
+    color: #212529;
+}
+
+kendo-grid.k-grid .k-pager-nav:focus{
+    box-shadow:none;
+}
+
+/* Kendo input */
+input.k-textbox{
+    border-width:0;
+    font-size:14px;
+    
+}
+
+
+@media only screen and (max-device-width : 767px) {
+    div.mobile-hide{
+        display:none;
+    }
+
+}
+
+/* Desktop and Tablet Only */
+@media only screen and (min-device-width : 768px) {
+    div.desktop-tablet-hide{
+      display:none;  
+    }
+}
+
+
+
+.login-main-div{
+    display: flex;
+    justify-content: center center;
+    align-items: center center ;
+    position: absolute;
+  }
+  
+  .login-main-div .login-title{
+      color: #0c7cd5;
+      font-size: 2.4em;
+      font-family:roboto, sans-serif;
+      overflow-wrap:break-word;
+      text-align:center;
+  }
+  
+  mat-form-field.login-primary{
+      width:100%;
+  }
+  
+  .login-panel{
+      padding-right:10px;
+      padding-left:10px;
+  }
+  
+  /* Buttons */
+  
+  .login-primary-button .mat-primary
+  {
+      min-width:100%;
+  }
+  

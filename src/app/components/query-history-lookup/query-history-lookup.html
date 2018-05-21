@@ -1,0 +1,75 @@
+﻿<!-- <loading-spinner *ngIf="isLoading"></loading-spinner> -->
+<div>
+    <div>
+        <mat-card class="mat-card-no-box">
+            <mat-card-title style="background-color:#ebebeb;" class="mat-card-title-margin">
+                <div style="display:flex;padding:10px 0 10px 5px;">
+                    <div class="card-title-text flex-start">
+                        Query History Lookup
+                    </div>
+
+                </div>
+            </mat-card-title>
+            <mat-card-content>
+                <form>
+                    <div class="control-container">
+                        <div style="padding-right:20px;">
+                            <p class="header-text">Citation # (Required):</p>
+                            <mat-form-field style="width:250px;">
+                                <input matInput type="text" placeholder="Citation #" name="citationNumber" [(ngModel)]="citationNumber">
+                                <button mat-button *ngIf="citationNumber" matSuffix mat-icon-button aria-label="Clear" (click)="citationNumber=''">
+                                    <mat-icon>close</mat-icon>
+                                </button>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <button mat-raised-button color="primary" class="mat-raised mat-darkprimary" (click)="searchCitation()" style="margin-top:32px;margin-bottom:32px;margin-right:10px;" matTooltip="Search" matTooltipPosition="above" matTooltipHideDelay="1000">Search</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div *ngIf="data" class="mobile-hide">
+                    <div class="kg-custom">
+                        <kendo-grid [data]="gridData"
+                                    [pageSize]="state.take"
+                                    [skip]="state.skip"
+                                    [sort]="state.sort"
+                                    [groupable]="true"
+                                    [group]="state.group"
+                                    [sortable]="true"
+                                    [pageable]="true"
+                                    filterable="menu"
+                                    (dataStateChange)="dataStateChange($event)">
+                            <kendo-grid-column field="dateTime" title="Date/Time">
+                            </kendo-grid-column>
+                            <kendo-grid-column field="tagNumber" title="Tag #">
+                            </kendo-grid-column>
+                            <ng-template kendoGridNoRecordsTemplate>
+                                <div style="text-align:center;">
+                                    No Records.
+                                </div>
+                            </ng-template>
+                        </kendo-grid>
+                    </div>
+                </div>
+                <div *ngIf="data?.length > 0" class="desktop-tablet-hide">
+                    <div style="border-bottom:5px solid rgba(0,0,0,.08);padding-top:5px;">
+                        <mat-grid-list *ngFor="let product of data" cols="2" rowHeight="4:1" style="border-top:3px solid rgba(0,0,0,.08);">
+                            <mat-grid-tile style="border-bottom:1px solid rgba(0,0,0,.08);"><p class="header-text">Date/Time:</p></mat-grid-tile><mat-grid-tile style="border-bottom:1px solid rgba(0,0,0,.08);">{{product.dateTime}}</mat-grid-tile>
+                            <mat-grid-tile style="border-bottom:1px solid rgba(0,0,0,.08);"><p class="header-text">Tag #:</p></mat-grid-tile><mat-grid-tile style="border-bottom:1px solid rgba(0,0,0,.08);">{{product.tagNumber}}</mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+
+                </div>
+                <div *ngIf="data && data?.length < 1" class="desktop-tablet-hide" style="text-align:center;padding-top:10px;">
+                    No Records.
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+
+    </div>
+</div>
+<div class="desktop-tablet-hide">
+    <button mat-mini-fab (click)="scrollToTop()" color="primary" style="position:fixed;bottom:4px;left:45%;opacity:0.6;" *ngIf="showScroll"><mat-icon>present_to_all</mat-icon></button>
+</div>

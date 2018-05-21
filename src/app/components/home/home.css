@@ -1,0 +1,14 @@
+﻿
+.home-primary-button
+{
+    padding-bottom:10px;
+}
+
+.home-primary-button .mat-primary 
+{
+    min-width:100%;
+}
+
+.button-container{
+    margin:0 15px 0 15px;
+}

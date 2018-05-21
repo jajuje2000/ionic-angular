@@ -1,0 +1,31 @@
+﻿
+.login-main-div{
+  display: flex;
+  justify-content: center center;
+  align-items: center center ;
+  position: absolute;
+}
+
+.login-main-div .login-title{
+    color: #0c7cd5;
+    font-size: 2.4em;
+    font-family:roboto, sans-serif;
+    overflow-wrap:break-word;
+    text-align:center;
+}
+
+mat-form-field.login-primary{
+    width:100%;
+}
+
+.login-panel{
+    padding-right:10px;
+    padding-left:10px;
+}
+
+/* Buttons */
+
+.login-primary-button .mat-primary
+{
+    min-width:100%;
+}
